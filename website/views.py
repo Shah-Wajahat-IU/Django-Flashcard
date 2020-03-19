@@ -112,15 +112,14 @@ def divide(request):
 			'num_2':num_2,
 			'color':color
 			})
-		
 		correct_anser=int(old_num_1) / int(old_num_2)
-		 
-		if float(answer) == correct_anser:
+		ans=round(correct_anser,3)
+		if float(answer) == ans:
 			my_ans="Correct Answer " + old_num_1 + " / " + old_num_2 + " = " + answer
 			color = "success" 
 			
 		else:
-		 	my_ans="Incorrect Answer " + old_num_1 + " / " + old_num_2 + " is not " + answer + " it is "+ str(correct_anser)
+		 	my_ans="Incorrect Answer " + old_num_1 + " / " + old_num_2 + " is not " + answer + " it is "+ str(ans)
 		 	color =	"danger"
 		return render(request,'divide.html',{
 			'answer':answer,
